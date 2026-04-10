@@ -3,7 +3,8 @@ pandas
 scipy
 matplotlib
 streamlit
-ydata-profiling
+#ydata-profiling
+sweetviz
 openpyxl
 xlrd
 

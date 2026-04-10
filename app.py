@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from ydata_profiling import ProfileReport
-from streamlit_pandas_profiling import st_profile_report
+import sweetviz as sv
+import streamlit.components.v1 as components
 import sys
 import os
 st.set_page_config(page_title='Data Profiler', layout='wide' )
@@ -79,8 +79,9 @@ if file_error:
 # Generate and display report (outside sidebar)
 if 'df' in locals() and 'minimal' in locals() and not file_error:
     with st.spinner('Generating report...'):
-        pr = ProfileReport(df, minimal=minimal)
+        report = sv.analyze(df)
+        report.show_html(filepath='sweetviz_report.html', open_browser=False)
+        with open('sweetviz_report.html', 'r') as f:
+            html_content = f.read()
     st.success('Report generated successfully!')
-    
-    if 'pr' in locals():
-        st_profile_report(pr)
+    components.html(html_content, height=1000, scrolling=True)
