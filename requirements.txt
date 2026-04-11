@@ -5,6 +5,7 @@ matplotlib
 streamlit
 pandas-profiling>=3.2.0
 numba<0.60
+pydantic<2.0
 pydantic-settings
 openpyxl
 xlrd
