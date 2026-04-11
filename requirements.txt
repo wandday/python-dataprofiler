@@ -4,7 +4,6 @@ scipy
 matplotlib
 streamlit
 ydata-profiling
-#sweetviz
 openpyxl
 xlrd
 
