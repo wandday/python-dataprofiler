@@ -1,4 +1,5 @@
-setuptools
+setuptools>=65.0
+importlib-metadata
 numpy
 pandas
 scipy
