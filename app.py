@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 from ydata_profiling import ProfileReport
-from streamlit_pandas_profiling import st_profile_report   
-
 import streamlit.components.v1 as components
 import sys
 import os
@@ -82,7 +80,6 @@ if file_error:
 if 'df' in locals() and 'minimal' in locals() and not file_error:
     with st.spinner('Generating report...'):
         pr = ProfileReport(df, minimal=minimal)
-        st_profile_report(pr)
     st.success('Report generated successfully!')
     
     if 'pr' in locals():
